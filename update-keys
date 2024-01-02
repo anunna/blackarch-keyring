@@ -6,7 +6,7 @@ TMPDIR=$(mktemp -d)
 trap "rm -rf '${TMPDIR}'" EXIT
 
 KEYSERVER='hkp://pgp.mit.edu'
-GPG="gpg --quiet --batch --no-tty --no-permission-warning --keyserver ${KEYSERVER}"
+GPG="gpg --quiet --batch --no-tty --no-permission-warning --keyserver ${KEYSERVER} --allow-weak-key-signatures"
 #GPG="gpg --quiet --batch --no-tty --no-permission-warning --keyserver "${KEYSERVER}" --homedir ${TMPDIR}"
 
 pushd "$(dirname "$0")" >/dev/null
